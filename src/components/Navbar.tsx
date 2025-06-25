@@ -13,6 +13,7 @@ export function Navbar() {
               alt="switchback logo"
               width={230}
               height={40}
+              priority
             />
           </Link>
 
