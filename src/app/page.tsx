@@ -27,67 +27,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <footer className="bg-gray-800 py-16 text-gray-300">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 grid gap-8 md:grid-cols-3">
-            <div>
-              <h3 className="mb-4 font-semibold text-white">
-                About Switchback
-              </h3>
-              <p className="mb-4 leading-relaxed">
-                SwitchBack is a free service created by riders for the riders.
-                If there's a race series missing, then please get in touch.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="mb-4 font-semibold text-white">Quick Links</h3>
-              <div className="space-y-2">
-                <p>
-                  <a
-                    href="#"
-                    className="transition-colors hover:text-green-400">
-                    Races List
-                  </a>
-                </p>
-                <p>
-                  <a
-                    href="#"
-                    className="transition-colors hover:text-green-400">
-                    Add Your Race
-                  </a>
-                </p>
-                <p>
-                  <a
-                    href="#"
-                    className="transition-colors hover:text-green-400">
-                    Contact Us
-                  </a>
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="mb-4 font-semibold text-white">Get in Touch</h3>
-              <p className="mb-4 leading-relaxed">
-                Questions? Suggestions? We'd love to hear from you.
-              </p>
-              <p>
-                <a
-                  href="mailto:hello@switchback-races.co.uk"
-                  className="transition-colors hover:text-green-400">
-                  hello@switchback-races.co.uk
-                </a>
-              </p>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Switchback.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -23,7 +23,7 @@ export default async function Page() {
   return (
     <>
       <Navbar />
-      <div className="mx-auto mt-8 max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto mt-24 max-w-6xl px-4 sm:px-6 lg:px-8">
         <Suspense fallback={'Loading...'}>
           {raceDates.map((raceDate) => {
             const dateString = new Date(raceDate).toLocaleDateString('en-GB', {
@@ -40,7 +40,7 @@ export default async function Page() {
 
             const dateBg = isWeekend
               ? 'from-green-500 to-green-400'
-              : 'from-gray-600 to-gray-500';
+              : 'from-gray-800 to-gray-700';
 
             return (
               <div className="mb-4" key={dateString}>

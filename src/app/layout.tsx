@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Poppins } from 'next/font/google';
 import './globals.css';
+import { Footer } from '@/components/Footer';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const poppins = Poppins({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins',
   subsets: ['latin'],
 });
 
@@ -15,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'SwitchBack',
   description:
-    "MTB races are a pain in the arse. So many platforms with loads of races, it's easy to double book yourself. Now you can see them all in the same place.",
+    'Signing onto MTB races is a pain in the arse. Switchback brings together all UK mountain bike races in one place.',
 };
 
 export default function RootLayout({
@@ -25,10 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <head>
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+      </head>
+      <body className={`${poppins.variable} ${geistMono.variable} antialiased`}>
         {/* <Navbar /> */}
         {children}
+        <Footer />
       </body>
     </html>
   );
