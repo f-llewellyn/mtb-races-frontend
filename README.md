@@ -1,35 +1,52 @@
-# Switchback – MTB Races Frontend
+# 🚵‍♂️ Switchback – MTB Races Frontend
 
-Switchback is a web application that aggregates all UK mountain bike races in one place, making it easier for riders to discover and sign up for events. Built with Next.js, React, and Tailwind CSS.
+> A modern Next.js web app that aggregates and displays all UK mountain bike races in one place.
 
-## Features
+[![Next.js](https://img.shields.io/badge/Next.js-v15.3.3-black.svg)](https://nextjs.org/) [![React](https://img.shields.io/badge/React-v19-61dafb.svg)](https://react.dev/) [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-Ready-38bdf8.svg)](https://tailwindcss.com/)
 
-- Browse a comprehensive list of UK MTB races
+## ✨ Features
 
-## Getting Started
+- 🏁 **Unified Race Listings** – All UK MTB races, one site
+- 📱 **Responsive UI** – Mobile-first, beautiful design
+- 🛠️ **Built with Next.js, React, and Tailwind CSS**
 
-To run the development server:
+## 🛠 Prerequisites
+
+- **Node.js** v24+
+- **pnpm** package manager
+
+## 🚀 Quick Start
+
+### 1. Clone & Setup
 
 ```bash
+git clone <repository-url>
+cd mtb-races-frontend
+
+# Generate .env file
+cp .env.example .env
+
+# Install dependencies
 pnpm install
+```
+
+### 2. Launch Development Server
+
+```bash
 pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-## Project Structure
+### 3. Production Build
 
-- `src/app/` – Main Next.js app pages and layout
-- `src/components/` – Reusable UI components (Navbar, RaceItem, etc.)
-- `src/types/` – TypeScript types
-- `src/api.ts` – API functions for fetching race data
+```bash
+pnpm build
+pnpm start
+```
 
-## Development
-
-- Edit the landing page in `src/app/page.tsx`
-- Edit the races list in `src/app/races/page.tsx`
-- Race data is fetched from a backend API (see `src/api.ts`)
-
-## Contributing
+## 🤝 Contributing
 
 Feedback and contributions are welcome! If you notice a missing race series or want to help, please get in touch.
+
+---

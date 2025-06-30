@@ -7,7 +7,7 @@ export async function getData<T>(
     const res = await fetch(fullEndpoint, reqOptions);
     return res.json();
   } catch (error) {
-    console.log(error);
-    throw Error(`Failed to fetch data from ${endpoint}`, { cause: error });
+    console.error(`Failed to fetch data from ${endpoint}`, { cause: error });
+    throw Error();
   }
 }
