@@ -5,12 +5,7 @@ import { TRace } from '@/types/race.type';
 import { Suspense } from 'react';
 
 export default async function Page() {
-  let races: TRace[];
-  try {
-    races = await fetchRaces();
-  } catch (error) {
-    return 'There was an error';
-  }
+  const races = await fetchRaces();
 
   const racesMappedByDate: Record<string, TRace[]> = {};
 
