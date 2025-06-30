@@ -4,7 +4,7 @@ on:
   - pull_request
 
 env:
-  API_BASE_URL: http://test.com
+  API_BASE_URL: http://localhost:8002/api
 
 jobs:
   build-code:
