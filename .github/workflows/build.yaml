@@ -4,7 +4,7 @@ on:
   - pull_request
 
 env:
-  API_BASE_URL: http://test.com
+  NEXT_PUBLIC_API_BASE_URL: http://test.com
 
 jobs:
   build-code:
