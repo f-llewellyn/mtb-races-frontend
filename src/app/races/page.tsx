@@ -4,6 +4,9 @@ import { RaceItem } from '@/components/RaceItem';
 import { TRace } from '@/types/race.type';
 import { Suspense } from 'react';
 
+// Prevents build-time pre-rendering
+export const dynamic = 'force-dynamic';
+
 export default async function Page() {
   const races = await fetchRaces();
 
