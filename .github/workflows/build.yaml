@@ -1,0 +1,31 @@
+name: Build Code
+
+on:
+  - pull_request
+
+env:
+  API_BASE_URL: http://test.com
+
+jobs:
+  build-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+          caqche: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build
