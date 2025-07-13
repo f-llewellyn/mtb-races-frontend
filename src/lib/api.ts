@@ -1,13 +1,35 @@
-export async function getData<T>(
+const baseUrl = process.env.API_BASE_URL!;
+const apiKey = process.env.API_KEY!;
+
+export async function get<T>(
   endpoint: string,
-  reqOptions?: RequestInit,
+  next: NextFetchRequestConfig,
 ): Promise<T> {
+  const res = await request(endpoint, `Failed to fetch data from ${endpoint}`, {
+    next,
+  });
+  return res.json();
+}
+
+async function request(
+  endpoint: string,
+  errorMessage: string,
+  requestConfig: RequestInit,
+): Promise<Response> {
   try {
-    const fullEndpoint = `${process.env.API_BASE_URL}${endpoint}`;
-    const res = await fetch(fullEndpoint, reqOptions);
-    return res.json();
+    return await fetch(`${baseUrl}${endpoint}`, {
+      method: requestConfig.method,
+      body: requestConfig.body,
+      headers: {
+        ...requestConfig.headers,
+        'X-API-KEY': apiKey,
+      },
+      next: requestConfig.next,
+    });
   } catch (error) {
-    console.error(`Failed to fetch data from ${endpoint}`, { cause: error });
+    console.error(errorMessage, {
+      cause: error,
+    });
     throw Error();
   }
 }
