@@ -25,8 +25,6 @@ FROM base AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 
-RUN corepack enable pnpm
-
 COPY --from=builder /app/public ./public
 
 RUN mkdir .next
@@ -35,4 +33,4 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 EXPOSE $PORT
-CMD ["pnpm", "start"]
+CMD ["node", "server.js"]
