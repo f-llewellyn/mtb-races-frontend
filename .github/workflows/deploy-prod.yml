@@ -1,7 +1,7 @@
-name: Deploy to Azure - Dev
+name: Deploy to Azure - Production
 on:
-  push:
-    branches: [master]
+  release:
+    types: [published]
 
 permissions:
   id-token: write
@@ -31,14 +31,14 @@ jobs:
 
       - name: Build and push
         run: |
-          docker build -t mtbracesdev.azurecr.io/switchback-frontend-dev:${{ github.sha }} .
-          docker tag mtbracesdev.azurecr.io/switchback-frontend-dev:${{ github.sha }} mtbracesdev.azurecr.io/switchback-frontend-dev:latest
-          docker push mtbracesdev.azurecr.io/switchback-frontend-dev:${{ github.sha }}
-          docker push mtbracesdev.azurecr.io/switchback-frontend-dev:latest
+          docker build -t mtbracesdev.azurecr.io/switchback-frontend-prod:${{ github.sha }} .
+          docker tag mtbracesdev.azurecr.io/switchback-frontend-prod:${{ github.sha }} mtbracesdev.azurecr.io/switchback-frontend-prod:latest
+          docker push mtbracesdev.azurecr.io/switchback-frontend-prod:${{ github.sha }}
+          docker push mtbracesdev.azurecr.io/switchback-frontend-prod:latest
 
       - name: Deploy to Container Apps
         uses: azure/container-apps-deploy-action@v1
         with:
-          containerAppName: switchback-frontend-dev
-          resourceGroup: switchback-dev
-          imageToDeploy: mtbracesdev.azurecr.io/switchback-frontend-dev:${{ github.sha }}
+          containerAppName: switchback-frontend-prod
+          resourceGroup: switchback-prod
+          imageToDeploy: mtbracesdev.azurecr.io/switchback-frontend-prod:${{ github.sha }}
