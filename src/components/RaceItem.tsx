@@ -8,6 +8,7 @@ interface IRaceItemProps {
 
 const borderColourMap = {
   [Sources.SI_ENTRIES]: 'border-red-500',
+  [Sources.BRITISH_CYCLING]: 'border-blue-800',
 };
 
 export function RaceItem({ race }: IRaceItemProps) {
@@ -19,7 +20,7 @@ export function RaceItem({ race }: IRaceItemProps) {
         className={`flex grow items-center justify-between gap-2 rounded-t-md border-l-5 ${borderColour} p-2`}>
         <p className="font-bold">{race.name}</p>
         <a href={race.detailsUrl} target="_blank">
-          <ExternalLink className="text-blue-700" />
+          <ExternalLink className="text-blue-400" />
         </a>
       </div>
       <div className="bg-gray-100 px-4 py-2 text-sm">
